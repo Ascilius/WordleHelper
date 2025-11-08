@@ -16,6 +16,7 @@ resulted in no green letters, (R, A, E) as yellow letters, and (M, N) as grey le
 The program will then calculate which words are possible and recommend them to you.
 
 ### v1.1
+2025-11-08
  - updated README.md
  - reorganized files
 
@@ -27,5 +28,7 @@ The program will then calculate which words are possible and recommend them to y
  - add new words list
  - add player statistics
 
-I use this to (sometimes) cheat in Wordle
-![](./data/ah_eto.gif)
+<br>
+
+###### I use this to sometimes "help" myself play Wordle
+<img src="./data/ah_eto.gif" width="307">
