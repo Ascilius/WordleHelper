@@ -1,23 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr  6 21:15:08 2022
-
-@author: Jason Kim
-
-Wordle Helper
-"""
-
-"""
-To-Do
- - strange bug (Spyder?)
- - repeating letters
-"""
+import sys
 
 debug = False
 
-import sys
-
 # word lists
+DATA_DIR = "data/"
 word_lists = {'corncob_lowercase.txt': [], 'five_letter_words.txt': [], 'top20kwords.txt': []}
 
 # exit keywords
@@ -38,8 +24,8 @@ if __name__ == "__main__":
     # loading word lists
     for filename in word_lists:
         print('Loading', filename, '...')
-        word_lists[filename] = open(filename).read().split('\n');
-    
+        word_lists[filename] = open(DATA_DIR + filename).read().split('\n')
+        
     # word length
     length = int(input('\nWord Length: ')) # debug: 10
     
@@ -60,18 +46,18 @@ if __name__ == "__main__":
     for filename in to_remove:
         word_lists.pop(filename)
     
+    # guessing phase
     for i in range(6):
         print('\nGUESS #{}'.format(i+1))
         
         # green letters
         possible_words()
-        print('\nGreen Letters: ', end = '')
-        green_letters = input().lower() # why is this scanning before possible words???
+        green_letters = input('\nGreen Letters: ').lower()
         if green_letters in exit: # quit keyword detection
             sys.exit()
-        # debugging
-        if debug == True:
-            print('Debug:', green_letters)
+        elif not '_' in green_letters: # win pog
+            print("\nYou won, congrats!")
+            break
         
         # search
         for filename in word_lists:

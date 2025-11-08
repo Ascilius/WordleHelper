@@ -1,6 +1,0 @@
-this      
-text      
-file      
-is        
-for       
-debugging 
