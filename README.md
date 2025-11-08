@@ -28,4 +28,4 @@ The program will then calculate which words are possible and recommend them to y
  - add player statistics
 
 I use this to (sometimes) cheat in Wordle
-![](./ah_eto.gif)
+![](./data/ah_eto.gif)
